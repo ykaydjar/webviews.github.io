@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link href="styling/wv_landing.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <meta charset="utf-8" lang="en">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <script src="backend/js/jquery-3.3.1.min.js"></script>
+        
+    </head>
+    
+    <body>
+        <div id = "wrapping">
+            
+            <div id = "main">
+                
+                <div id = "header">
+                    
+                    <div id = "head-nav">
+                        <h1 style="font-family: Montserrat, black;" id="text-logo">WebViews</h1>
+                        <ul style="font-family: Montserrat, normal;">
+                            <li>
+                                <a href="#" id="skills">Our Skills</a>
+                                <a href="#" id="job">Job</a>
+                                <a href="#" id="store">Store</a>  
+                                <a href="#login" class="login">LogIn</a>
+                                <script>
+                                    $(".login").click(function(){
+                                        $("#dropdown-button").hide();
+                                        $("#content").hide();
+                                        $("#socials").hide();
+                                        $(".screen-order").css("z-index", "-1");
+                                        $(".screen-login").css("z-index", "1");
+                                        $(".screen-reg").css("z-index", "-1");
+                                        $(".screen-nav").css("filter", "blur(2px)");
+                                    });
+                                </script>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="screen-nav">
+                        <ul id="dropdown" style="font-family: Montserrat, normal;">
+                            <button class="fas fa-bars" id="dropdown-button">
+                                <ul class="dropdown-menu">
+                                    <li>About Us</li>
+                                    <li>Technologies</li>
+                                    <li>ChangeLog</li>
+                                    <li>Cooperation</li>
+                                    <li>Good Deed</li>
+                                    <li>Donate</li>
+                                </ul>
+                            </button> 
+                        </ul>
+                        
+                        <ul id="content" style="font-family: Montserrat, normal;">
+                            <li>
+                                <h3>Did you ever wanted to have your own website?</h3>
+                                We can help you with that simple thing!<br><br>
+                                Personal blog, Internet store, Forum and much more! Everything depends on your imagination! We only need you to send us your ".psd"-layout and we will make everything else!<br><br>
+                                If you don't have your personalized ".psd"- layout we can help you to make It! Just write us and we will help you to create your personal design!<br><br>
+                                You can also chose one of the pre-made ".psd"- layouts on the order menu and tell us about changes you want to make with it!<br>
+                                <button id="order">Order Now!</button>
+                                <script>
+                                    $("#order").click(function(){
+                                            $("#content").hide();
+                                            $("#dropdown-button").hide();
+                                            $("#socials").hide();
+                                            $(".screen-order").css("z-index", "1");
+                                            $(".screen-login").css("z-index", "-1");
+                                            $(".screen-nav").css("filter", "blur(2px)"); 
+                                    });
+                                </script>
+                                <button>More Info!</button>
+                                <br><br>
+                                <h3>You can also order fully ready to use website!</h3>
+                                Just go to the store page, find the layout that is best suitable for you and buy it! You will not have a problems with setting it up, dont worry! The code is fully commented and there is also instructions in the set!<br>
+                                <button id="store">Go to Store!</button>
+                                <button>More Info!</button>
+                            </li>
+                        </ul>
+                    
+                        <ul style="font-family: Montserrat, normal;" id="socials">
+                            <li><a href="" class="fab fa-facebook-f" id="social-icon"></a></li>
+                            <li><a href="" class="fab fa-instagram" id="social-icon"></a></li>
+                            <li><a href="" class="fab fa-twitter" id="social-icon"></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="screen-login" style="font-family: Montserrat, normal;">
+                        <ul id="login-form">
+                            <form method="post">
+                                <span id="login-header">LOGIN MENU:</span>
+                                
+                                <br>
+                                <br>
+                                
+                                <span id="login-email">Input your e-mail here:</span>
+                                <input type="email" name="email" required>
+                                <span id="login-pass">Input your password:</span>
+                                <input type="password" name="pass" required>
+                                
+                                <br>
+                                
+                                <span id="reg-assist">Don't have an account yet? <a href="#reg">CREATE ONE!</a></span>
+                                <script>
+                                    $("#reg-assist").click(function(){
+                                        $("#dropdown-button").hide();
+                                        $("#content").hide();
+                                        $("#socials").hide();
+                                        $(".screen-order").css("z-index", "-1");
+                                        $(".screen-login").css("z-index", "-1");
+                                        $(".screen-reg").css("z-index", "1");
+                                        $(".screen-nav").css("filter", "blur(2px)");
+                                    });
+                                </script>
+                                <br>
+                                <br>
+                                
+                                <button>SUBMIT</button>
+                                <button>BACK</button>
+                            </form>
+                        </ul>
+                    </div>
+                    
+                    <div class="screen-order" style="font-family: Montserrat, normal;">
+                        <ul id="order-form">
+                            <form>
+                                <span id="order-header">Order Menu:</span>
+                                
+                                <br>
+                                <br>
+                                
+                                <span id="order-file">
+                                    INPUT YOUR ".PSD"-FILE HERE:
+                                    <br>
+                                    <label class="fas fa-file-import" for="file-upload" id="label-upload">
+                                        <input type="file" id="file-upload">
+                                        <script>
+                                            var filename = $('input[type=file]').val().replace(/C:\\fakepath\\/i, '');
+                                        </script>
+                                    </label>
+                                    <br>
+                                </span>
+                                
+                                <br>
+                                
+                                <span id="premade-layouts-header">OR CHOOSE ONE OF THE PREMADE LAYOUTS:</span>
+                                <ul class="premade-layouts">
+                                    <li id="premade-layout"><input type="radio" name="layout"></li>
+                                    <li id="premade-layout"><input type="radio" name="layout"></li>
+                                    <li id="premade-layout"><input type="radio" name="layout"></li>
+                                    <li id="premade-layout"><input type="radio" name="layout"></li>
+                                    <li id="premade-layout"><input type="radio" name="layout"></li>
+                                    <li id="premade-layout"><input type="radio" name="layout"></li>
+                                    
+                                    <label for=""><input type="checkbox">:MAKE SOME CHANGES</label>
+                                </ul>
+                                <span class="email">INPUT YOUR E-MAIL HERE:</span><br>
+                                <input type="email" name="email" method="post" id="order-email">
+                                
+                                <br>
+                                <br>
+                                
+                                <a href="#">SUBMIT ORDER</a>
+                                OR <a href="#reg" id="reg">JOIN US!</a>
+                                <script>
+                                    $("#reg").click(function(){
+                                        $("#dropdown-button").hide();
+                                        $("#content").hide();
+                                        $("#socials").hide();
+                                        $(".screen-order").css("z-index", "-1");
+                                        $(".screen-login").css("z-index", "-1");
+                                        $(".screen-reg").css("z-index", "1");
+                                        $(".screen-nav").css("filter", "blur(2px)");
+                                    });
+                                </script>
+                                
+                                <br>
+                                
+                                ALREADY HAVE AN ACCOUNT? <a href="#login" class="login">LOG IN NOW!</a>
+                                <script>
+                                    $(".login").click(function(){
+                                        $("#dropdown-button").hide();
+                                        $("#content").hide();
+                                        $("#socials").hide();
+                                        $(".screen-order").css("z-index", "-1");
+                                        $(".screen-login").css("z-index", "1");
+                                        $(".screen-reg").css("z-index", "-1");
+                                        $(".screen-nav").css("filter", "blur(2px)");
+                                    });
+                                </script>
+                            </form>
+                        </ul>
+                    </div>
+                    
+                    <div class="screen-reg" style="font-family: Montserrat, normal;">
+                        <ul>
+                            <form id="reg-form" action="backend/php/reg.php" method="post">
+                                <span id="reg-header">REGISTRATION MENU:</span>
+                                
+                                <br>
+                                <br>
+                                
+                                <span class="email" id="reg-email">Input your e-mail here:</span>
+                                <input type="email" name="email" title="e-mail">
+                                <span class="pass" id="reg-pass">Input your password:</span>
+                                <input type="password" name="pass" title="password">
+                                
+                                <br>
+                                <br>
+                                
+                                <span>OR:</span>
+                                <br>
+                                <br>
+                                <span class="telegram" id="reg-telegram">Register with your telegram account:</span>
+                                <input type="tel" name="telegram">
+                                
+                                <br>
+                                <br>
+                                
+                                <input type="checkbox" required>
+                                <span id="reg-terms">I agree with <a href="#">company terms</a>!</span>
+                                
+                                <br>
+                                <br>
+                                
+                                <button id="reg-submit" type="submit">SUBMIT</button>
+                                <button type="reset">BACK</button>
+                                
+                                
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div id = "side-nav">
+                <ul style="font-family: Montserrat, normal;">
+                    
+                    <li style="font-family: Montserrat, black;" id="tagline"><a id="text-tagline">We will make your website great again!</a></li>
+                    
+                    <li id="icon"><a href="" class="fas fa-briefcase" id="text-icon"></a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </body>
+</html>
